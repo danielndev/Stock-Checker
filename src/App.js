@@ -16,8 +16,10 @@ import testData from './test.csv';
 import testDataLrg from './testLrg.csv';
 import symbolList from './SymbolList.csv';
 
+require('dotenv').config();
+
 //API_KEY to access the stock data
-const API_KEY = 'QH12AZJNBR1MYGM7';
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const bounceAnimation = keyframes`${pulse}`;
  
@@ -154,7 +156,7 @@ function App() {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col xs={10}>
+          <Col md={10} sm={12}>
             <div className="chart-container ">
               {drawChart()}
             </div>
